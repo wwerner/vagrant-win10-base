@@ -21,7 +21,7 @@ EOS
 # Configure Windows Firewall
 $script_config_fw = <<EOS
 # Just an example below as reminder how to use this
-# netsh advfirewall firewall add rule name="MyApp" profile=domain,private,public protocol=any enable=yes DIR=In program="c:\Program Files\MyApp.exe" Action=Allow
+# netsh advfirewall firewall add rule name="MyApp" profile=domain,private,public protocol=any enable=yes DIR=In program="c:\Program Files..." Action=Allow
 EOS
 
 
