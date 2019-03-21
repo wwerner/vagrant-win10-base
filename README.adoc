@@ -16,5 +16,10 @@ The following tools will be installed:
 
 == Random Notes
 
-* The Vagrantfile shows samples for software installation using `choco` and for downloading and executing installer files.
+* The Vagrantfile shows samples for 
+** software installation using `choco` 
+** installations by downloading and executing installer files
+** Windows firewall configuration
+** VPN Connection setup 
+
 * User/Password for Windows: `vagrant/vagrant`.
