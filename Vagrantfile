@@ -9,6 +9,7 @@ choco install -y adb
 choco install -y babun
 choco install -y googlechrome
 choco install -y javaruntime
+choco install -y jdk8
 EOS
 
 # Install dependencies from the web
