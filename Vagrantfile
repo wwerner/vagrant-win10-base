@@ -19,9 +19,12 @@ c:/Users/vagrant/install/FlowVPN-11.exe
 EOS
 
 # Configure Windows Firewall
-$script_config_fw = <<EOS
+$script_config_net = <<EOS
 # Just an example below as reminder how to use this
 # netsh advfirewall firewall add rule name="MyApp" profile=domain,private,public protocol=any enable=yes DIR=In program="c:\Program Files..." Action=Allow
+
+# Add a Windows VPN Connection, see https://docs.microsoft.com/en-us/powershell/module/vpnclient/add-vpnconnection?view=win10-ps
+# Add-VpnConnection -Name "MyVPN" -ServerAddress "10.1.1.1" -TunnelType "Pptp"
 EOS
 
 
@@ -44,7 +47,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "Win10 - Vagrant Base"
-    vb.gui = true
+
+    # Set to true if you want to use the VirtualBox GUI instead of connecting via RDP
+    vb.gui = false
+    
     vb.memory = "4096"
     vb.cpus = "2"
     vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
@@ -60,6 +66,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: $script_install_choco, privileged: true
   config.vm.provision "shell", inline: $script_install_apps, privileged: false
-  config.vm.provision "shell", inline: $script_config_fw, privileged: true
+  config.vm.provision "shell", inline: $script_config_net, privileged: true
 
 end
