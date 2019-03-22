@@ -12,7 +12,7 @@ The following tools will be installed:
 * ADB - https://developer.android.com/studio/command-line/adb
 * Babun Shell - http://babun.github.io/
 * Google Chrome - https://www.google.com/chrome/
-* Java Runtime and JDK 
+* JDK 8
 
 == Random Notes
 
